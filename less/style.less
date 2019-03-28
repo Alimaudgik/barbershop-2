@@ -1,0 +1,283 @@
+@bg-color: #242424;
+@brown-bg: #826550;
+@main-nav-color: #6a4d38;
+@white: #ffffff;
+@white-dark: #f8f5f2;
+@table-bg: #404040;
+@tr-light: #4e4e4e;
+@tr-dark: #353535;
+@footer-bg: #292929;
+
+@font: "PTSans Narrow", Arial, Helvetica, sans-serif;
+@standart-font-size: 20px;
+@standart-line-height: 27px;
+
+@border: 1px solid #e5ddd5;
+@border-footer: 1px solid #3f3f3f;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: @font;
+  font-size: @standart-font-size;
+  line-height: @standart-line-height;
+  background-color: @bg-color;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-nav {
+  background-color: @brown-bg;
+}
+
+.main-nav__toggle {
+  background-color: @main-nav-color
+}
+
+.site-list__item a,
+.user-list__item a {
+  display: block;
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 0.9em;
+  line-height: 24px;
+  color: @white;
+}
+.site-list__item a {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.stats__header {
+  background-color: @white;
+}
+.stats__slogan {
+  font-size: 1.5em;
+  line-height: calc(@standart-font-size * 1.5em);
+}
+
+/*table*/
+.stats__list {
+  border-collapse: collapse;
+  border: none;
+  margin-bottom: 15px;
+  color: @white;
+
+}
+
+.stats__list tr {
+  background-color: @table-bg;
+}
+.stats__list tr:nth-child(2) {
+  background-color: @tr-light;
+}
+.stats__list tr:nth-child(3) {
+  background-color: @tr-dark;
+}
+
+.stats__value {
+  padding: 25px 20px;
+  font-size: 2em;
+  line-height: 18px; 
+  font-weight: bold;
+  text-align: left;
+}
+.stats__field {
+  padding: 25px 20px;
+  font-size: 0.9em;
+  line-height: 18px;
+  text-align: right;
+}
+.stats__value sup,
+.stats__field sup {
+  position: relative;
+  top: 5px;
+}
+
+.stats__legend {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 35px;
+  color: @white;
+  opacity: 0.3;
+  text-align: center;
+  width: 700px;
+  border: 1px dashed red;
+}
+.stats__legend sup {
+  position: relative;
+  top: 5px;
+}
+
+/*ADVANTAGES*/
+.advantages__img {
+  border: 1px dashed red;
+  margin-bottom: 35px;
+}
+.advantages__list {
+  margin-bottom: 25px;
+}
+.advantages__title {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: @white;
+  font-weight: bold;
+}
+.advantages__description {
+  color: @white;
+}
+
+.advantages__toggles {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+/*NEWS*/
+.news {
+  background-color: @white-dark;
+}
+
+.news__wrapper {
+  margin: 0;
+  padding: 70px 20px 28px;
+  border-bottom: @border;
+}
+
+.news__title {
+  font-size: 1.5em;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.news__item {
+  padding: 20px 0;
+  border-bottom: @border;
+}
+
+.news__date {
+  display: inline-block;
+  width: 40px;
+  padding: 10px;
+  padding-bottom: 5px;
+  font-size: 0.8em;
+  line-height: 18px;
+  text-align: center;
+  background-color: #000000;
+  color: @white;
+}
+.news__day {
+  font-size: 1.5em;
+  line-height: 30px;
+}
+
+.news__text {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.news__to-all {
+  display: block;
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: @border;
+  font-size: 0.9em;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+/*REVIEWS*/
+
+.reviews {
+  margin: 0;
+  padding: 30px 20px 15px;
+  background-color: @white-dark;
+}
+
+.reviews__title {
+  font-size: 1.5em;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+.reviews__item {
+  width: 300px;
+  margin-bottom: 25px; 
+  position: relative;
+}
+
+.reviews__author-picture {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 48px;
+  border: @border;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.reviews__author-name {
+  display: inline-block;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.reviews__text {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*FOOTER*/
+
+.page-footer {
+  background-color: @footer-bg;
+}
+
+.page-footer__wrapper {
+  margin: 0;
+  padding: 40px 20px 20px;
+}
+
+.page-footer__contacts {
+  font-size: 0.9em;
+  text-align: center;
+  color: @white;
+}
+
+.contacts__title {
+  font-weight: bold;
+}
+.contacts__text {
+  margin: 0;
+  padding: 0;
+}
+
+.contacts__phone {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  margin-top: 20px;
+  padding: 10px 0;
+  border: @border-footer;
+}
