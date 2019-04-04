@@ -18,13 +18,16 @@
 @border: 1px solid #e5ddd5;
 @border-footer: 1px solid #3f3f3f;
 
+@tablet-width: 768px;
+@deckspot-width: 1200px;
+
 
 
 /* Файл scaffolding.less */
 
 body {
   width: 320px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   border: 2px solid yellow;
 
@@ -61,6 +64,23 @@ a {
   text-align: center;
 }
 
+@media (min-width: @tablet-width) {
+  body {
+    min-width: 720px;
+    max-width: 1196px;
+    background: @bg-dark-color url(../img/bb-desktop.png) no-repeat 50% 0;
+    background-size: 1178px auto;
+  }
+}
+
+@media (min-width: @deckspot-width) {
+  body {
+    min-width: 1200px;
+    background: @bg-dark-color url(../img/bb-desktop.png) no-repeat 50% 0;
+    background-size: 1391px auto;
+  }
+
+}
 
 
 
