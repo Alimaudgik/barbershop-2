@@ -1,29 +1,44 @@
-@bg-color: #242424;
-@brown-bg: #826550;
-@main-nav-color: #6a4d38;
+/* Файл variables.less */
+
+@bg-dark-color: #242424;
+@bg-darkgrey: #292929;
+@brown-light: #826550;
+@brown-dark: #6a4d38;
 @white: #ffffff;
 @white-dark: #f8f5f2;
-@table-bg: #404040;
-@tr-light: #4e4e4e;
-@tr-dark: #353535;
-@footer-bg: #292929;
+@grey: #404040;
+@grey-light: #4e4e4e;
+@grey-dark: #353535;
 
-@font: 'PT Sans Narrow', sans-serif;
-@standart-font-size: 20px;
+
+@font: 'PT Sans Narrow', "Arial", sans-serif;
+@standart-font: 20px;
 @standart-line-height: 27px;
 
 @border: 1px solid #e5ddd5;
 @border-footer: 1px solid #3f3f3f;
 
+
+
+/* Файл scaffolding.less */
+
 body {
   width: 320px;
   margin: 0;
   padding: 0;
-  font-family: @font;
-  font-size: @standart-font-size;
-  line-height: @standart-line-height;
-  background-color: @bg-color;
   border: 2px solid yellow;
+
+  font-size: 18px;
+  line-height: 27px;
+  font-family: @font;
+  color: #f7f4f1;
+  font-style: normal;
+
+  background-color: @bg-darkgrey;
+}
+
+img {
+  height: auto;
 }
 
 ul {
@@ -31,19 +46,26 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
 
-/*HEADER*/
+/* файл page-header.less */
 
 .page-header__logo {
   display: block;
   padding: 30px 0 25px;
   text-align: center;
 }
+
+
+
+
+/* HEADER 
+
 
 .main-nav {
   position: relative;
@@ -97,7 +119,7 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  display: none;
+  display: block;
   width: 70px;
   height: 50px;
   background-color: @main-nav-color;
@@ -122,7 +144,7 @@ a {
 
 .site-list__item,
 .user-list__item {
-  display: none;
+  display: block;
   height: 50px;
   border-top: 1px solid #886e5b;
   border-bottom: 1px solid #71543f;
@@ -177,7 +199,7 @@ a {
 }
 
 
-/*INTRO-TEXT*/
+/*INTRO-TEXT
 
 .visually-hidden {
   position: absolute;
@@ -208,7 +230,7 @@ a {
 
 
 
-/*table*/
+/*table
 .stats__list {
   width: 100%;
   margin-bottom: 15px;
@@ -273,7 +295,7 @@ a {
   top: 5px;
 }
 
-/*ADVANTAGES*/
+/*ADVANTAGES
 .advantages {
   position: relative;
 }
@@ -314,7 +336,7 @@ a {
   margin-bottom: 15px;
 }
 
-/*NEWS*/
+/*NEWS
 .news {
   background-color: @white-dark;
 }
@@ -372,7 +394,7 @@ a {
 }
 
 
-/*REVIEWS*/
+/*REVIEWS
 
 .reviews {
   margin: 0;
@@ -419,7 +441,7 @@ a {
 }
 
 
-/*FOOTER*/
+/*FOOTER
 
 .page-footer {
   background-color: @footer-bg;
@@ -497,3 +519,4 @@ a {
   padding: 15px 0;
   margin-bottom: 23px;
 }
+*/
