@@ -254,7 +254,6 @@ a {
   font-size: 20px;
   text-align: center;
 
-  border: @red-border;
 }
 
 .stats__legend sup {
@@ -268,18 +267,54 @@ a {
 
 .stats__list {
   width: 100%;
-  border-collapse: collapse;
-  border: none;
+  display: flex;
+  flex-flow: column nowrap;
 
   /* Временно для сетки*/
   height: 320px;
 }
+.stats__list tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px; 
+}
+.stats__list tr:nth-child(even) {
+  background-color: @grey-light;
+}
+.stats__list tr:nth-child(odd) {
+  background-color: @grey-dark;
+}
+.stats__list tr:first-child,
+.stats__list tr:last-child {
+  background-color: @grey;
+}
+
+.stats__value {
+  position: relative;
+  padding-left: 20px;
+  font-size: 40px;
+  line-height: 18px;
+  font-weight: bold;
+}
+.stats__value sup {
+  position: absolute;
+  right: -20px;
+  top: -5px;
+}
+.stats__field {
+  padding-right: 20px; 
+  line-height: 18px;
+  text-align: right;
+}
+
 
 
 @media (min-width: @tablet-width) {
   .stats {
     width: 640px;
-    margin-top: -194px;
+    margin-top: -187px;
   
     /* Временно для сетки */
     min-height: 500px;
@@ -299,27 +334,51 @@ a {
     line-height: 40px;
     margin-right: 60px;
     text-transform: initial;
-
-    border: @red-border;
   }
 
   .stats__intro {
     width: 220px;
     padding-left: 30px;
-    border: @red-border;
   }
   
-.stats__legend--top {
-  display: inline-block;
-  text-align: left;
-}
+  .stats__legend--top {
+    display: inline-block;
+    text-align: left;
+  }
 
   .stats__legend--bottom {
     display: none;
   }
 
   .stats__list {
+    flex-direction: row;
+  }
+  .stats__list tr {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: center;
+    float: left;
+    width: 320px;
+    height: 160px; 
+  }
+
+  .stats__value {
+    padding-left: 35px;
+    font-size: 72px;
+    line-height: 76px;
+
+  }
+
+  .stats__field {
+    padding-left: 35px;
     width: 100%;
+    font-size: 20px;
+    text-align: left;
+
+  }
+
+  .stats__field br {
+    display: none;
   }
 
 } 
@@ -329,38 +388,31 @@ a {
     display: flex;
     flex-flow: row no-wrap;
     width: 960px;
-    margin-top: -169px;
+    margin-top: -160px;
   
     /* Временно для сетки */
-    min-height: 320px;
+    min-height: 260px;
   }
 
   .stats__header {
     flex-direction: column;
+    justify-content: space-between;
     width: 240px;
 
     /* Временно для сетки */
-    min-height: 320px;
+    min-height: 260px;
   }
 
-  .stats__slogan {
-    margin-bottom: 50px;
-  }
-
+  
+  .stats__slogan,
   .stats__intro {
-    margin-bottom: 40px;
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
   }
 
   .stats__list {
     width: 640px;
-    display: flex;
-    flex-flow: row wrap;
   }
-
-
-
-
 }
 
 /*.page-header__logo {
