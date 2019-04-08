@@ -23,15 +23,18 @@
 @tablet-width: 768px;
 @deckspot-width: 1200px;
 
-@font-face {
-  font-family: PTSans;
-  src: url(../fonts/PT_Sans-Narrow-Web-Bold.ttf);
-  src: url(../fonts/PT_Sans-Narrow-Web-Regular.ttf;);
-  font-weight: bold;
+/*@font-face {
   font-weight: normal;
-  
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  src: url("fonts/PTSansNarrow.woff2") format("woff2"), url("fonts/PTSansNarrow.woff") format("woff");
 }
-
+@font-face {
+  font-weight: bold;
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  src: url("fonts/PTSansNarrowBold.woff2") format("woff2"), url("fonts/PTSansNarrowBold.woff") format("woff");
+}*/
 
 /* Файл scaffolding.less */
 
@@ -41,7 +44,7 @@ body {
   padding: 0;
   border: 2px solid yellow;
 
-  font-family: @font;
+  font-family: "PT Sans Narrow", "Arial", sans-serif;
   font-size: 18px;
   line-height: 27px;
 
@@ -52,7 +55,7 @@ body {
 }
 
 img {
-  /*width: 100%;*/
+  width: 100%;
   height: auto;
 }
 
@@ -98,16 +101,12 @@ a {
   body {
     min-width: 720px;
     max-width: 1196px;
-    background: @bg-dark-color url(../img/bb-desktop.png) no-repeat 50% 0;
-    background-size: 1178px auto;
   }
 }
 
 @media (min-width: @deckspot-width) {
   body {
     min-width: 1200px;
-    background: @bg-dark-color url(../img/bb-desktop.png) no-repeat 50% 0;
-    background-size: 1391px auto;
   }
 }
 
@@ -124,11 +123,37 @@ a {
   text-align: center;
 }
 
+.page-header__logo img {
+  width: 226px;
+  height: 85px;
+}
+
 @media (min-width: @tablet-width) {
-  .page-header__logo {
-    height: 400px;
-    order: 2;
+  .page-header {
+    background-color: #000000;
   }
+
+  .page-header__logo {
+    order: 2;
+
+    width: 100%;
+    height: 400px;
+
+    background-color: #000000;
+    background-image: url("../img/bg-header.jpg");
+    background-repeat: no-repeat;
+    background-position: center -9px;
+    background-size: cover;
+  }
+
+  .page-header__logo img {
+    display: block;
+    width: 370px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+  
 }
 
 @media (min-width: @deckspot-width) {
@@ -138,6 +163,8 @@ a {
 }
 
 
+
+/*
 .page-header,
 .page-header__logo {
   .no-outline();
@@ -146,7 +173,7 @@ a {
 .page-header__logo {
   background: rgba(255, 255, 255, 0.5);
 }
-
+*/
 
 /* Файл blocks/main-nav.less */
 
@@ -301,7 +328,7 @@ a {
 .stats__value sup {
   position: absolute;
   right: -20px;
-  top: -5px;
+  top: 0;
 }
 .stats__field {
   padding-right: 20px; 
@@ -314,7 +341,7 @@ a {
 @media (min-width: @tablet-width) {
   .stats {
     width: 640px;
-    margin-top: -187px;
+    margin-top: -180px;
   
     /* Временно для сетки */
     min-height: 500px;
@@ -323,6 +350,8 @@ a {
   .stats__header {
     display: flex;
     flex-flow: row wrap;
+    background-color: @white;
+    z-index: 1;
 
     padding: 30px 40px;
     text-align: left;
@@ -366,9 +395,11 @@ a {
     padding-left: 35px;
     font-size: 72px;
     line-height: 76px;
-
   }
-
+  .stats__value sup {
+    right: -30px;
+    top: -5px;
+  }
   .stats__field {
     padding-left: 35px;
     width: 100%;
