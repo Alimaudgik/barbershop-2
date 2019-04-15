@@ -672,6 +672,7 @@ a {
 
 
 
+
 /* Файл blocks/stats.less */
 
 .stats {
@@ -791,115 +792,139 @@ a {
 }
 
 
+
 @media (min-width: @tablet-width) {
+
   .stats {
     width: 640px;
-    margin-top: -180px;
-  
-    /* Временно для сетки */
-    min-height: 500px;
+    margin-top: -185px;
   }
   
   .stats__header {
     position: relative;
-    z-index: 1;
+
     display: flex;
-    flex-flow: row wrap;
-    background-color: @white;
-    z-index: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
-    padding: 30px 40px;
-    text-align: left;
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 27px;
+      left: -15px;
+
+      border: 15px solid transparent;
+      border-bottom-color: #ffffff;
+      transform: rotate(45deg);
+    }
   }
-
+  
   .stats__slogan {
-    width: 220px;
+    width: 240px;
+    margin-bottom: 18px;
+
     font-size: 40px;
     line-height: 40px;
-    margin-right: 60px;
-    text-transform: initial;
+    text-align: left;
+    text-transform: none;
   }
-
+  
   .stats__intro {
-    width: 220px;
-    padding-left: 30px;
+    width: 210px;
+    margin-top: 5px;
+    padding-right: 47px;
+
+    text-align: left;
   }
   
   .stats__legend--top {
-    display: inline-block;
-    text-align: left;
+    display: block;
+    width: 240px;
+
+    color: rgba(0, 0, 0, 0.3);
   }
 
   .stats__legend--bottom {
     display: none;
   }
-
-  .stats__list {
-    flex-direction: row;
+  
+  .stats__list tbody {
+    display: flex;
+    flex-wrap: wrap;
   }
+  
   .stats__list tr {
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-content: center;
-    float: left;
-    width: 320px;
-    height: 160px; 
+    width: 250px;
+    padding: 25px 35px;
+    padding-bottom: 28px;
   }
-
+  
+  .stats__list td {
+    display: block;
+    width: auto;
+    padding: 0;
+  }
+  
   .stats__value {
-    padding-left: 35px;
+    margin-bottom: 7px;
+
     font-size: 72px;
-    line-height: 76px;
+    line-height: 72px;
   }
-  .stats__value sup {
-    right: -30px;
-    top: -5px;
-  }
+
   .stats__field {
-    padding-left: 35px;
-    width: 100%;
     font-size: 20px;
+    line-height: 27px;
     text-align: left;
-
   }
-
+  
   .stats__field br {
     display: none;
   }
+}
 
-} 
+
 
 @media (min-width: @desktop-width) {
+
   .stats {
     display: flex;
-    flex-flow: row no-wrap;
+
     width: 960px;
     margin-top: -160px;
-  
-    /* Временно для сетки */
-    min-height: 260px;
   }
-
+  
   .stats__header {
-    flex-direction: column;
-    justify-content: space-between;
+    display: block;
     width: 240px;
 
-    /* Временно для сетки */
-    min-height: 260px;
+    &::before {
+      top: 22px;
+    }
   }
-
   
-  .stats__slogan,
+  .stats__slogan {
+    width: auto;
+    margin-bottom: 42px;
+  }
+  
   .stats__intro {
-    margin: 0;
-    padding: 0;
+    width: auto;
+    margin-bottom: 32px;
+    padding-right: 30px;
   }
 
+  .stats__legend--top {
+    width: auto;
+  }
+  
   .stats__list {
+    display: flex;
     width: 640px;
   }
 }
+
 
 /*.page-header__logo {
   display: block;
