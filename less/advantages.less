@@ -1,14 +1,10 @@
 /*block advantages.less*/
 
-/* Файл variables.less */
-
 @red-border: 1px dashed red;
-
 
 @tablet-width: 768px;
 @desktop-width: 1200px;
 @mobile-width-only: 767px;
-
 
 
 .advantages {
@@ -137,10 +133,11 @@
 
   .advantages::after {
     bottom: -45px;
+    left: 0;
         
     border-top: 45px solid #353535;
-    border-left: 360px solid transparent;
-    border-right: 360px solid transparent;
+    border-left-width: 360px;
+    border-right-width: 360px;
   }
 
   .advantages__wrapper {
@@ -212,9 +209,9 @@
   .advantages::after {
     bottom: -65px;
         
-    border-top: 65px solid #353535;
-    border-left: 600px solid transparent;
-    border-right: 600px solid transparent;
+    border-top-width: 65px;
+    border-left-width: 600px;
+    border-right-width: 600px;
   }
 
   .advantages__wrapper {
@@ -230,6 +227,7 @@
   .advantages__item {
     width: 320px;
     min-height: 395px;
+    margin-bottom: 40px;
 
     text-align: center;
 
