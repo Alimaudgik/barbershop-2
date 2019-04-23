@@ -8,16 +8,33 @@
 
 
 .reviews {
+  position: relative;
+
   padding: 0;
   background-color: #f8f5f2;
   color: #000000;
+
+  &::after {
+    content: '';
+    
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    
+    border-top: 35px solid #f8f5f2;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+
+  }
 }
 
 .reviews__wrapper {
   display: flex;
   flex-flow: column nowrap;
-  margin: 0;
-  padding: 30px 20px 20px;
+
+  width: 280px;
+  margin: 0 auto;
+  padding: 30px 0 20px;
 }
 
 .reviews__title {
@@ -35,17 +52,21 @@
   display: none;
 }
 
+.reviews__list {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
 .reviews__item {
   border: @red-border;
   position: relative;
 
   display: none;
   flex-flow: row wrap;
-  width: 280px;
+  width: 100%;
 
   margin: 0 auto;
-  
-  margin-bottom: 30px;
   padding: 0;
   
   &:first-child {
@@ -111,4 +132,94 @@
   padding: 0;
   width: 80px;
   height: 10px;
+}
+
+.reviews__toggles .slider-current {
+  background-color: #353535;
+  border-color: #616160;
+}
+
+
+@media (min-width: @tablet-width) {
+  .reviews__wrapper {
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    width: 640px;
+
+    padding: 35px 0 70px;
+  }
+
+  .reviews__title {
+    width: 320px;
+
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .reviews__write {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 160px;
+    height: 50px;
+
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    border: 1px solid #e5ddd5;
+
+    &:hover {
+      border-color: #d5c9bd;
+    }
+  
+    &:active {
+      border-color: #d5c9bd;
+      background-color: #d5c9bd;
+      color: rgba(0, 0, 0, 0.3)
+    }
+  }
+
+  .reviews__list {
+    position: relative;
+
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+
+    border: 1px solid #d5c9bd;
+  }
+  
+  .reviews__item {
+    padding: 35px 30px;
+    order: 2;
+  }
+
+  .reviews__prev,
+  .reviews__next {
+    display: flex;
+
+    width: 50px;
+    margin: 0;
+    padding: 0;
+
+    font-size: 0;
+    background: none;
+
+    border: none;
+    outline: 1px solid #d5c9bd;
+  }
+
+  .reviews__prev {
+    order: 1;
+  }
+
+  .reviews__next {
+    order: 3;
+  }
+
+
 }
