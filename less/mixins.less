@@ -1,0 +1,49 @@
+@bg-dark-color: #242424;
+@bg-darkgrey: #292929;
+@brown-light: #826550;
+@brown-dark: #6a4d38;
+@white: #ffffff;
+@white-dark: #f8f5f2;
+@grey: #404040;
+@grey-light: #4e4e4e;
+@grey-dark: #353535;
+
+
+
+@font: 'PT Sans Narrow', "Arial", sans-serif;
+@standart-font: 20px;
+@standart-line-height: 27px;
+
+@border: 1px solid #e5ddd5;
+@border-footer: 1px solid #3f3f3f;
+@red-border: 1px dashed red;
+
+
+@tablet-width: 768px;
+@desktop-width: 1200px;
+@mobile-width-only: 767px;
+
+
+/* Файл mixins.less */
+
+.no-outline() {
+  outline: none;
+  background: transparent;
+
+  &::before {
+    display: none;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  body {
+    min-width: 720px;
+    max-width: 1196px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  body {
+    min-width: 1200px;
+  }
+}
