@@ -251,30 +251,29 @@
       </div>
     </footer>
 
-    <select>
-        <h1>личный кабинет</h1>
-        <p>Введите свой логин и пароль, чтобы войти</p>
-      <form>
-        <div>
-          <label for="">
-            <input type="text">
-          </label>
-          <label for="">
-            <input type="text">
-          </label>
+    <section class="login-page">
+    <div class="login-block">
+        <h1 class="login__title">личный кабинет</h1>
+        <p class="login__text">Введите свой логин и пароль, чтобы войти</p>
+      <form class="login__form">
+        <div class="login__data">
+          <label class="visually-hidden" for="name"></label>
+          <input id="name" type="text" placeholder="Логин">
+          <label class="visually-hidden" for="password"></label>
+          <input id="password" type="password" placeholder="Пароль">
         </div>
-        <div>
-          <label for="">
-            <input type="text">
-          </label>
-          <a href="">Я забыл пароль!</a>  
+        <div class="login-enter">
+          <input id="remember" type="checkbox">
+          <label class="remember" for="remember">Запомните меня</label>
+          <a class="checklist__forget-link" href="">Я забыл пароль!</a>  
         </div>
-        <div>
-          <button>Войти</button>
-          <button>Закрыть</button>
+        <div class="login__submit">
+          <button class="button-submit" type="submit">Войти</button>
+          <button class="button-close" type="button">Закрыть</button>
         </div>
       </form>
-    </select>
+    </div>
+    </section>
   
     <script>
         var navMain = document.querySelector('.main-nav');
