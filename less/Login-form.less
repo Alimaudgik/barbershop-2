@@ -1,13 +1,17 @@
 @tablet-width: 768px;
 @desktop-page: 1200px;
 
+@keyframes popup-move {
+  0% {top: -800px};
+  50% {top: 50px};
+  100% {top: 0};
+}
 
 .page-main {
   position: relative;
 }
 
 .login-page {
-  display: none;
 
   position: absolute;
   left: calc(50% - 160px);
@@ -21,6 +25,17 @@
   
   background-color: #f8f5f2;
   box-shadow: 0 50px 50px 0 rgba(0, 1, 1, 0.75);
+}
+
+.login-page__closed {
+  display: none;
+}
+
+.login-page__opened {
+  display: block;
+
+  animation: popup-move 2s infinite;
+  animation-iteration-count: 1;
 }
 
 .login__title {
@@ -54,8 +69,6 @@
   padding: 0;
 
   font-family: 'PT Sans Narrow', "Arial", sans-serif;
-
-  border: 1px dashed red;
 }
 
 .login__data {
@@ -112,8 +125,6 @@
   margin-bottom: 30px;
 
   font-size: 18px;
-
-  border: 1px dashed red;
 }
 
 #remember {
@@ -224,6 +235,13 @@
 
 
 @media (min-width: @tablet-width) {
+  @keyframes popup-move {
+    0% {top: -800px};
+    33% {top: 0};
+    66% {top: -250px};
+    100% {top: -140px};
+  }
+
   .login-page {
     left: calc(50% - 230px);
     top: -140px;
@@ -282,6 +300,13 @@
 }
 
 @media (min-width: @desktop-page) {
+  @keyframes popup-move {
+    0% {top: -800px};
+    33% {top: -200px};
+    66% {top: -550px};
+    100% {top: -435px};
+  }
+
   .login-page {
     top: -435px;
   }
