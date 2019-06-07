@@ -12,13 +12,14 @@ link.addEventListener('click', function() {
   }
 });
 
-close.addEventListener('click', function() {
+close.addEventListener('click', function(evt) {
   evt.preventDefault();
-    popup.classList.add('login-page__closed');
     popup.classList.remove('login-page__opened');
+    popup.classList.add('login-page__closed');
   });
 
-window.addEventListener('keydown', function() {
+window.addEventListener('keydown', function(evt) {
+  evt.preventDefault();
   if (evt.keyCode === 27) {
     if (popup.classList.contains('login-page__opened')) {
       popup.classList.remove('login-page__opened');
