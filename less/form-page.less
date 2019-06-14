@@ -1,0 +1,49 @@
+
+@bg-darkgrey: #292929;
+@bg-lightgrey: #f8f5f2;
+@tablet-width: 768px;
+@desktop-width: 1200px;
+@mobile-width-only: 767px;
+
+.form-page {
+  width: 320px;
+}
+
+.page-main--inner {
+
+}
+
+
+@media(min-width: @tablet-width) {
+
+  .form-page {
+    width: @tablet-width;
+  }
+
+  .form-page .page-header__logo {
+    height: 215px;
+
+    background-image: url("../img/back-tablet-works.jpg");
+    background-position: center -65px;
+  }
+}
+
+
+
+@media(min-width: @desktop-width) {
+
+  .form-page {
+    width: @desktop-width;
+  }
+
+  .form-page .page-header__logo {
+    height: 310px;
+
+    background-image: url("../img/back-desktop-works.jpg");
+    background-position-y: -80px;
+    background-size: 2560px 720px;
+  }
+}
+
+
+
