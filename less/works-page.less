@@ -43,10 +43,23 @@
 }
 
 .works {
+  position: relative;
+
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
+  
+  &::after {
+    content: '';
 
+    position: absolute;
+    bottom: -85px;
+    left: -20px;
+    border-top: 35px solid #f8f5f2;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-bottom: none;
+  }
 }
 
 .works-item {
@@ -191,6 +204,14 @@
 
 @media(min-width: @tablet-width) {
 
+  .works::after {
+    bottom: -95px;
+    left: -64px;
+    border-top-width: 45px;
+    border-left-width: 384px;
+    border-right-width: 384px;
+  }
+
   .works-page {
     width: @tablet-width;
   }
@@ -306,6 +327,10 @@
 
   .works-page {
     width: @desktop-width;
+  }
+
+  .works::after {
+    display: none;
   }
 
   .works-page .page-header__logo {
