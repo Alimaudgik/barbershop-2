@@ -13,7 +13,7 @@
 .page-main--inner {
   background-color: @bg-lightgrey;
   margin: 0;
-  padding: 0 20px 50px;
+  padding: 0;
 }
 
 .page-main--inner img {
@@ -48,17 +48,21 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
+
+  margin: 0;
+  padding: 0 20px 35px;
   
   &::after {
     content: '';
 
     position: absolute;
-    bottom: -55px;
-    left: -20px;
+    bottom: -35px;
+    left: 0;
     border-top: 35px solid #f8f5f2;
     border-left: 160px solid transparent;
     border-right: 160px solid transparent;
     border-bottom: none;
+    z-index: 10;
   }
 }
 
@@ -70,6 +74,10 @@
   margin-bottom: 20px;
 
   border: 1px solid #e5ddd5;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .works-item--work-of-month {
@@ -204,12 +212,19 @@
 
 @media(min-width: @tablet-width) {
 
-  .works::after {
-    bottom: -95px;
-    left: -64px;
-    border-top-width: 45px;
-    border-left-width: 384px;
-    border-right-width: 384px;
+  .works {
+    padding-left: 64px;
+    padding-right: 64px;
+    
+    &::after {
+      content: "";
+
+      bottom: -45px;
+      
+      border-top-width: 45px;
+      border-left-width: 384px;
+      border-right-width: 384px;
+    }
   }
 
   .works-page {
@@ -221,25 +236,6 @@
 
     background-image: url("../img/back-tablet-works.jpg");
     background-position: center -65px;
-  }
-
-  .page-main--inner {
-    position: relative;
-    padding-left: 64px;
-    padding-right: 64px;
-    
-    &:before {
-      content: "";
-
-      position: absolute;
-      top: -40px;
-      left: 0;
-
-      border-top: 40px solid transparent;
-      border-left: 384px solid @bg-lightgrey;
-      border-right: 384px solid @bg-lightgrey;
-      border-bottom: none;
-    }
   }
 
   .page-title {
