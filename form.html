@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/outlines.css">
 </head>
-<body class="form-page">
+<body class="works-page form-page">
 
   <header class="page-header">
     <a class="page-header__logo" href="index.html">
@@ -43,7 +42,7 @@
         </ul>
         <ul class="main-nav__list user-list">
           <li class="user-list__item">
-            <a class="user-list__login" href="login.html">
+            <a class="user-list__login" href="#">
                 <svg class="user-list__login-icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                   <polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/><polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
                 </svg>
@@ -63,79 +62,93 @@
     <h1 class="page-title__title">Запись на стрижку</h1>
     <a class="button" href="index.html">На главную</a>
   </header>
-
+  
   <form action="" class="form__data">
 
     <section class="form__data--person">
-      <label for="surname" class="data-name data-person__surname"><input id="surname" type="text" placeholder="Фамилия"></label>
-      <label for="name" class="data-name data-person__name"><input id="name" type="text" placeholder="Имя"></label>
-      <label for="second-name" class="data-name data-person__second-name"><input id="second-name" type="text" placeholder="Отчество"></label>
-      <label for="phone" class="data-web data-person__phone"><input id="phone" type="text" placeholder="Контактный телефон"></label>
-      <label for="e-mail" class="data-web data-person__e-mail"><input id="e-mail" type="text" placeholder="Контактный e-mail:"></label>
-      <label for="additional-info" class="data-person__additional-info"><input id="additional-info" type="textarea" placeholder="Доп. информация для мастера"></label>
+      <p class="data-name">
+        <input id="surname" type="text" placeholder="Фамилия" name="surname">
+        <input id="name" type="text" placeholder="Имя">
+        <input id="second-name" type="text" placeholder="Отчество">
+      </p>
+      <p class="data-web">
+        <input id="phone" type="text" placeholder="Контактный телефон">
+        <input id="e-mail" type="text" placeholder="Контактный e-mail:">
+      </p>
+      <textarea class="additional-info" placeholder="Доп. информация для мастера"></textarea>
     </section>
 
     <section class="form__data--view">
       <p class="view__title">Выберите модель бороды</p>
         <ul class="form__view-list">
         <li class="view-list__item">
-          <label for="view-1">
-            <input id="view-1" type="radio">
-            <p class="data-view__text">адмирал</p>
-            <p class="data-view__img">
-              <img src="img/beard-1-admiral.png" width="52" height="49">
-            </p>
-          </label>
+          <input id="view-1" type="radio" name="view" value="view-1" checked>
+          <label for="view-1"></label>
+          <p class="data-view__text">адмирал</p>
+          <p class="data-view__img">
+            <img src="img/beard-1-admiral.png" width="52" height="49">
+          </p>
         </li>
         <li class="view-list__item">
-          <label for="view-2">
-            <input id="view-2" type="radio">
+            <input id="view-2" type="radio" name="view" value="view-2">
+            <label for="view-2"></label>
             <p class="data-view__text">лесоруб</p>
             <p class="data-view__img">
               <img src="img/beard-2-lesorub.png" alt="Борода адмирала" width="58" height="68">
             </p>
-          </label>
         </li>
         <li class="view-list__item">
-          <label for="view-3">
-            <input id="view-3" type="radio">
+            <input id="view-3" type="radio" name="view" value="view-3">
+            <label for="view-3"></label>
             <p class="data-view__text">полярник</p>
             <p class="data-view__img">
               <img src="img/beard-3-polyarnik.png" alt="Борода адмирала" width="64" height="78">
             </p>
-          </label>
         </li>
         <li class="view-list__item">
-          <label for="view-4">
-            <input id="view-4" type="radio">
+            <input id="view-4" type="radio" name="view" value="view-4">
+            <label for="view-4"></label>
             <p class="data-view__text">боярин</p>
             <p class="data-view__img">
               <img src="img/beard-4-boyarin.png" alt="Борода адмирала" width="58" height="98">
             </p>
-          </label>
         </li>
         <li class="view-list__item">
-            <label for="view-5">
-            <input id="view-5" type="radio">
+            <input id="view-5" type="radio" name="view" value="view-5">
+            <label for="view-5"></label>
             <p class="data-view__text">мудрец</p>
             <p class="data-view__img">
               <img src="img/beard-5-mudrec.png" alt="Борода адмирала" width="46" height="105">
             </p>
-          </label>
         </li>
         </ul>
     </section>
 
     <section class="form__data--additional">
-      <input id="add-1" type="checkbox"><label for="add-1">Подкрасить бороду</label>
-      <input id="add-2" type="checkbox"><label for="add-2">Накрутить усы</label>
-      <input id="add-3" type="checkbox"><label for="add-3">Причесать бороду</label>
-      <input id="add-4" type="checkbox"><label for="add-4">Подровнять виски</label>
-      <input id="add-5" type="checkbox"><label for="add-5">Убрать седину</label>
-      <input id="add-6" type="checkbox"><label for="add-6">Отполировать лысину</label>
+      <p class="additional__title">дополнительные услуги:</p>
+      <ul class="additional-list">
+        <li class="additional-item">
+          <input id="add-1" type="checkbox" name="add-1" value="add-1" checked><label for="add-1">Подкрасить бороду</label>
+        </li>
+        <li class="additional-item">
+          <input id="add-2" type="checkbox" name="add-2" value="add-2" checked><label for="add-2">Накрутить усы</label>
+        </li>
+        <li class="additional-item">
+          <input id="add-3" type="checkbox" name="add-3" value="add-3"><label for="add-3">Причесать бороду</label>
+        </li>
+        <li class="additional-item">
+          <input id="add-4" type="checkbox" name="add-4" value="add-4"><label for="add-4">Подровнять виски</label>
+        </li>
+        <li class="additional-item">
+          <input id="add-5" type="checkbox" name="add-5" value="add-5"><label for="add-5">Убрать седину</label>
+        </li>
+        <li class="additional-item">
+          <input id="add-6" type="checkbox" name="add-6" value="add-6"><label for="add-6">Отполировать лысину</label>
+        </li>
+      </ul>
     </section>
 
-    <button type="submit">Отправить заявку</button>
+    <button class="form__data--submit" type="submit">Отправить заявку</button>
   </form>
 
 
@@ -159,7 +172,7 @@
       <button class="button-close" type="button">Закрыть</button>
     </div>
   </form>
-  </section>
+</section>
 
 </main>
     

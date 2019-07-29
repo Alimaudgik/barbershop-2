@@ -10,9 +10,241 @@
   color: #000000;
 }
 
-.page-main--inner {
-
+.form__page-main {
+  position: relative;
+  
+  &::after {
+    content: '';
+  
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    border-top: 35px solid #f8f5f2;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-bottom: none;
+    z-index: 10;
+  }
 }
+
+.form-page .form__data {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.form__data--person {
+  padding: 0;
+  margin: 0;
+}
+
+.form__data--person input,
+.form__data--person textarea {
+  margin: 0;
+  padding: 10px 19px 12px;
+  margin-bottom: 6px;
+
+  width: 100%;
+
+  font-family: 'PT Sans Narrow', "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  
+  border: 1px solid #e5ddd5;
+
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: #000000;
+  }
+}
+
+.form__data--person textarea {
+  display: block;
+  margin: 0;
+}
+
+.form__data--person .data-name,
+.form__data--person .data-web {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.form__data--person textarea {
+  margin: 0;
+  resize: none;
+  
+  height: 110px;
+}
+
+
+/*Борода*/
+
+.form__data--view {
+  margin: 0;
+}
+
+.view__title,
+.additional__title {
+  margin: 40px 0;
+  padding: 0;
+
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.form__view-list {
+  display: flex;
+  flex-flow: row wrap;
+
+  width: 100%;
+}
+
+.view-list__item {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 33%;
+  min-height: 205px; 
+}
+
+.view-list__item label {
+  position: relative;
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  border: 1px solid #e5ddd5
+}
+
+.view-list__item input {
+  display: none;
+}
+
+.view-list__item input:checked + label::before {
+  content: '';
+  position: absolute;
+  left: calc(50% - 10px);
+  top: calc(50% - 10px);
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+  border: 1px solid #e5ddd5;
+}
+
+.data-view__text {
+  margin: 0;
+  padding: 20px 0 15px;
+
+  line-height: 18px;
+}
+
+.data-view__img {
+  margin: 0;
+  padding: 0;
+}
+
+
+/*Дополнительные услуги*/
+
+.additional-list {
+  display: flex;
+  flex-flow: row wrap;
+
+  margin: 0;
+  padding: 0;
+}
+
+.additional-item {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+
+  font-size: 18px;
+  line-height: 36px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.additional-item input {
+  display: none;
+}
+
+.additional-item label {
+  position: relative;
+  padding-left: 60px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -8px;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid #e5ddd5;
+  } 
+}
+
+.additional-item input:checked + label::after {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 11px;
+
+  width: 20px;
+  height: 8px;
+
+  border-left: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+
+  transform: rotate(-45deg)
+}
+
+
+/*Отправка формы*/
+
+  .form__data--submit {
+    margin: 45px 0 40px;
+    padding: 0;
+
+    width: 100%;
+
+    font-family: 'PT Sans Narrow', "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    background-color: #826550;
+  
+    border: none;
+  
+    cursor: pointer;
+    outline: none;
+  
+    &:hover {
+      opacity: 0.7;
+    }
+  
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
 
 
 @media(min-width: @tablet-width) {
@@ -26,6 +258,131 @@
 
     background-image: url("../img/back-tablet-works.jpg");
     background-position: center -65px;
+  }
+
+  .form__page-main::after {
+    display: none;
+  }
+
+  .form-page .form__data {
+    padding: 0 64px;
+  }
+
+  .form__data--person input,
+  .form__data--person textarea {
+    margin: 0;
+    padding: 20px 26px;
+
+    font-size: 24px;
+  }
+
+  .form__data--person .data-name {
+    flex-direction: row;
+  }
+
+  .form__data--person .data-name,
+  .form__data--person .data-web {
+    margin-bottom: 35px;
+  }
+
+    .data-web input {
+    margin: 0;
+    margin-bottom: 35px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .form__data--person textarea {
+    height: 210px;
+  }
+
+
+  /*Борода для планшета*/
+
+ .view__title,
+ .additional__title {
+  position: relative;
+
+  margin: 55px 0 45px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 30px;
+}
+
+.view__title::before,
+.additional__title::before {
+  margin-right: 25px;
+  left: 0;
+}
+
+.view__title::after,
+.additional__title::after {
+  margin-left: 25px;
+  right: 0;
+}
+
+.view__title::before,
+.view__title::after,
+.additional__title::before,
+.additional__title::after
+ {
+  content: '';
+  position: absolute;
+
+  width: 135px;
+  height: 1px;
+  background-color: #e5ddd5;
+}
+
+.form__view-list {
+  flex-wrap: nowrap;
+}
+
+.view-list__item {
+  justify-content: stretch;
+  
+  width: 20%;
+  min-height: 240px;
+}
+
+.data-view__text {
+  padding: 30px 0;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+
+/*Дополнительные услуги*/
+  .additional__title {
+    margin-bottom: 70px;
+  }
+
+  .additional-item {
+    width: 50%;
+    margin-bottom: 45px;
+  }
+
+  .additional-item label {
+    font-size: 24px;
+    line-height: 24px;
+
+    &::before {
+      top: -5px;
+    }
+  }
+
+  /*Отправка формы*/
+
+  .form__data--submit {
+    margin: 15px 0 75px;
+
+    font-size: 24px;
+    line-height: 70px;
   }
 }
 
@@ -44,7 +401,54 @@
     background-position-y: -80px;
     background-size: 2560px 720px;
   }
+
+  .form-page .form__data {
+    padding: 0 120px;
+  }
+
+  .form__data--person .data-name {
+    justify-content: space-between;
+  }
+
+  .form__data--person .data-web {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .data-name input {
+    width: 295px;
+  }
+
+  .data-web input {
+    margin: 0;
+    width: 462px;
+  }
+
+  /*Борода на компах*/
+
+  .view__title::before {
+    margin-right: 35px;
+  }
+  
+  .view__title::after {
+    margin-left: 35px;
+  }
+  
+  .view__title::before,
+  .view__title::after {
+    width: 280px;
+  }
+
+
+  /*Дополнительные услуги*/
+
+  .additional-item {
+    width: 33%;
+  }
+  
+  /*Отправка формы*/
+
+  .form__data--submit {
+    margin: 35px 0 85px;
+  }
 }
-
-
-
