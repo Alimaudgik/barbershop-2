@@ -1,3 +1,6 @@
+
+
+
 var popup = document.querySelector('.login-page');
 var link = document.querySelector('.user-list__login');
 var close = document.querySelector('.button-close')
